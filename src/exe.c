@@ -18,7 +18,6 @@ void	ft_execute(t_pipex data, char **ep)
 	int std[2];
 	pid_t pid;
 	int i;
-	int ret;
 
 	i = -1;
 	fd = open(data.file1, O_RDONLY);
@@ -61,7 +60,7 @@ void	ft_execute(t_pipex data, char **ep)
 				ft_cleanup(0, NULL, data);
 				exit(1);
 			}
-			ret = execve(data.alloc.cmdpaths[i], data.alloc.spcmd[i], ep);
+			execve(data.alloc.cmdpaths[i], data.alloc.spcmd[i], ep);
 		}
 	}
 	close(std[0]);
