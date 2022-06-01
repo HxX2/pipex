@@ -6,6 +6,7 @@
 .vscode
 README.md
 ppxtst/
+./*
 
 # make
 pipex
@@ -17,6 +18,6 @@ libft.a
 ft*.out
 
 # don't ignore
-!*.c
+!*.*
 !pipex.h
 !Makefile
