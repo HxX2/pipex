@@ -20,7 +20,6 @@ ft*.out
 !*.c
 !pipex.h
 !Makefile
+!src/fprintf/Makefile
 
 # files without ext
-*
-!*.*
