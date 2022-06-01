@@ -23,3 +23,5 @@ ft*.out
 !src/fprintf/Makefile
 
 # files without ext
+*
+!*.*
