@@ -1,0 +1,22 @@
+#--------------------#
+#   Pipex Ignores    #
+#--------------------#
+
+# vscode
+.vscode
+README.md
+ppxtst/
+
+# make
+pipex
+*.o
+libft.a
+
+# c++ debuger
+*.dSYM
+ft*.out
+
+# don't ignore
+!*.c
+!pipex.h
+!Makefile
