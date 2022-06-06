@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:37:24 by zlafou            #+#    #+#             */
-/*   Updated: 2022/06/01 19:50:56 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/06/06 10:55:07 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ int	main(int ac, char **av, char **ep)
 	ft_setcmdpaths(&data);
 
 	ft_execute(data,ep);
-	
-	
 
 	// printdata(data);
 	// ft_cleanup(0, NULL, data);

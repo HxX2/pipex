@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   str_utils2.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/06 10:54:33 by zlafou            #+#    #+#             */
+/*   Updated: 2022/06/06 10:54:33 by zlafou           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pipex.h"
 
 size_t	ft_strlen(const char *str)
@@ -9,16 +21,6 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-
-// void	ft_putstr(char *str)
-// {
-// 	size_t	len;
-
-// 	if (!str)
-// 		return ;
-// 	len = ft_strlen(str);
-// 	write(1, str, len);
-// }
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
@@ -58,6 +60,5 @@ void	*ft_calloc(size_t n)
 		return (0);
 	while (n)
 		((unsigned char *)ptr)[--n] = 0;
-
 	return (ptr);
 }

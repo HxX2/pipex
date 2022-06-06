@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:41:38 by zlafou            #+#    #+#             */
-/*   Updated: 2022/06/01 18:49:46 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/06/06 10:55:49 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <sys/wait.h>
-
 
 typedef struct s_alloc
 {
@@ -55,11 +54,9 @@ int		ft_strcmp(const char *s1, const char *s2);
 void	*ft_memset(void *b, int c, size_t len);
 char	*ft_strchr(const char *s, int c);
 void	*ft_calloc(size_t count);
-// void	ft_putstr(char *str);
 
 int		ft_fprintf(int fd, const char *str, ...);
 
 void	printdata(t_pipex data);
 void	ft_execute(t_pipex data, char **ep);
-// int		ft_printf(const char *str, ...);
 #endif
