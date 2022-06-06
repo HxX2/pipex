@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:37:24 by zlafou            #+#    #+#             */
-/*   Updated: 2022/06/06 10:55:07 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/06/06 11:55:20 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	main(int ac, char **av, char **ep)
 {
 	t_pipex	data;
-	// pid_t	pid;
 
 	ft_memset(&data, 0, sizeof(data));
 	if (ac < 5)
@@ -28,7 +27,6 @@ int	main(int ac, char **av, char **ep)
 		av++;
 		ac--;
 	}
-
 	data.file1 = av[1];
 	data.file2 = av[ac - 1];
 	ft_checkfiles(data.file1);
@@ -37,11 +35,8 @@ int	main(int ac, char **av, char **ep)
 	ft_setpaths(ep, &data);
 	ft_setspcmd(&data);
 	ft_setcmdpaths(&data);
-
-	ft_execute(data,ep);
-
-	// printdata(data);
-	// ft_cleanup(0, NULL, data);
+	ft_execute(data, ep);
+	return (0);
 }
 
 void	ft_setcmdpaths(t_pipex *data)
@@ -101,4 +96,3 @@ void	ft_setspcmd(t_pipex *data)
 	}
 	data->alloc.spcmd = spcmd;
 }
- 
