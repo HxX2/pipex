@@ -6,11 +6,12 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:10:58 by zlafou            #+#    #+#             */
-/*   Updated: 2022/06/06 10:50:33 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/06/09 22:51:02 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
+#include <stdio.h>
 
 static	void	ft_filter(t_pipex data, int i)
 {
@@ -49,8 +50,6 @@ static	void	ft_child(t_pipex data, int i, int *std, char **ep)
 	ft_filter(data, i);
 	if (i != data.ncmd - 1)
 		dup2(std[1], 1);
-	if (i != 0)
-		dup2(std[0], 0);
 	close(std[1]);
 	close(std[0]);
 	execve(data.alloc.cmdpaths[i], data.alloc.spcmd[i], ep);
@@ -76,9 +75,10 @@ void	ft_execute(t_pipex data, char **ep)
 		ft_cleanup(pid != -1, "fork", data);
 		if (pid == 0)
 			ft_child(data, i, std, ep);
+		dup2(std[0], 0);
+		close(std[0]);
+		close(std[1]);
 	}
-	close(std[0]);
-	close(std[1]);
 	while (wait(NULL) != -1)
 		;
 }
