@@ -2,6 +2,10 @@
 #   Pipex Ignores    #
 #--------------------#
 
+# files without ext
+*
+!*.*
+
 # vscode
 .vscode
 README.md
@@ -21,7 +25,3 @@ ft*.out
 !pipex.h
 !Makefile
 !src/fprintf/Makefile
-
-# files without ext
-*
-!*.*

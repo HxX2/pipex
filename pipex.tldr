@@ -7414,7 +7414,7 @@
             "parentId": "page",
             "childIndex": 59,
             "point": [
-              387.21,
+              387.21000000000004,
               151.64
             ],
             "size": [
@@ -7423,7 +7423,7 @@
             ],
             "rotation": 0,
             "style": {
-              "color": "lightGray",
+              "color": "white",
               "size": "small",
               "isFilled": false,
               "dash": "draw",
@@ -7442,7 +7442,7 @@
             "parentId": "page",
             "childIndex": 60,
             "point": [
-              828.03,
+              828.0300000000001,
               150.19
             ],
             "size": [
@@ -7451,7 +7451,7 @@
             ],
             "rotation": 0,
             "style": {
-              "color": "lightGray",
+              "color": "white",
               "size": "small",
               "isFilled": false,
               "dash": "draw",
@@ -7470,13 +7470,13 @@
             "parentId": "page",
             "childIndex": 61,
             "point": [
-              47.11,
-              458.47
+              43.565,
+              464.57000000000005
             ],
             "rotation": 0,
             "text": "chlid 1",
             "style": {
-              "color": "lightGray",
+              "color": "white",
               "size": "small",
               "isFilled": false,
               "dash": "draw",
@@ -7492,13 +7492,13 @@
             "parentId": "page",
             "childIndex": 62,
             "point": [
-              566.55,
-              464.35
+              573.975,
+              464.57000000000005
             ],
             "rotation": 0,
             "text": "chlid 2",
             "style": {
-              "color": "lightGray",
+              "color": "white",
               "size": "small",
               "isFilled": false,
               "dash": "draw",
@@ -7514,13 +7514,13 @@
             "parentId": "page",
             "childIndex": 63,
             "point": [
-              1033.13,
-              470.67
+              1014.2950000000001,
+              464.57000000000005
             ],
             "rotation": 0,
             "text": "chlid 3",
             "style": {
-              "color": "lightGray",
+              "color": "white",
               "size": "small",
               "isFilled": false,
               "dash": "draw",
@@ -7711,7 +7711,7 @@
             "rotation": 0,
             "text": ":  first loop",
             "style": {
-              "color": "lightGray",
+              "color": "white",
               "size": "small",
               "isFilled": false,
               "dash": "draw",
@@ -7733,7 +7733,7 @@
             "rotation": 0,
             "text": ":  second loop",
             "style": {
-              "color": "lightGray",
+              "color": "white",
               "size": "small",
               "isFilled": false,
               "dash": "draw",
@@ -7755,7 +7755,7 @@
             "rotation": 0,
             "text": ":  third loop",
             "style": {
-              "color": "lightGray",
+              "color": "white",
               "size": "small",
               "isFilled": false,
               "dash": "draw",

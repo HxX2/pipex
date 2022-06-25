@@ -3,15 +3,19 @@ CC = gcc
 NAME = pipex
 FLAGS = -Wextra -Werror -Wall
 HEADER = "\033[0;35m   █▀▀█ ░▀░ █▀▀█ █▀▀ █░█ \n   █░░█ ▀█▀ █░░█ █▀▀ ▄▀▄ \n   █▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀ ▀░▀\033[0;0m"
+FOOTER = "\033[0;35m➔\033[0;0m type \033[0;34m./pipex\033[0;0m to run the programme."
 
-all: $(NAME)
+all: $(NAME) | footer
 
 header :
 	@echo
 	@echo $(HEADER)
 	@echo
 
-$(NAME): header
+footer :
+	@echo $(FOOTER)
+
+$(NAME): | header
 	@echo "\033[0;35m\033[1m────── making fprintf ──────\033[0;0m"
 	@printf "\033[2m"
 	@$(MAKE) -C src/fprintf/
@@ -21,13 +25,13 @@ $(NAME): header
 	$(CC) $(FLAGS) -o $(NAME) $(SRC)
 	@echo "\033[0;0m"
 
-clean: header
+clean: | header
 	@echo "\033[0;35m\033[1m────── clean fprintf ──────\033[0;0m"
 	@printf "\033[2m"
 	@$(MAKE) clean -C src/fprintf/
 	@echo "\033[0;0m"
 
-fclean: header clean
+fclean: clean | header
 	@echo "\033[0;35m\033[1m────── fclean pipex ──────\033[0;0m"
 	@printf "\033[2m"
 	rm -rf $(NAME)
@@ -39,7 +43,18 @@ fclean: header clean
 
 re: fclean all
 
-san: header
+bonus: | header
+	@echo "\033[0;35m\033[1m────── making fprintf ──────\033[0;0m"
+	@printf "\033[2m"
+	@$(MAKE) -C src/fprintf/
+	@echo "\033[0;0m"
+	@echo "\033[0;35m\033[1m────── making pipex ──────\033[0;0m"
+	@printf "\033[2m"
+	$(CC) $(FLAGS) -o $(NAME) $(SRC)
+	@echo
+
+
+san: | header
 	@echo "\033[0;35m\033[1m────── making fprintf ──────\033[0;0m"
 	@printf "\033[2m"
 	@$(MAKE) -C src/fprintf/
