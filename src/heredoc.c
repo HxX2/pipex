@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 08:28:49 by zlafou            #+#    #+#             */
-/*   Updated: 2022/09/27 06:24:57 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/09/27 11:44:53 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_heredoc(char *del, int fd)
 
 	ft_fprintf(1, "heredoc> ");
 	line = get_next_line(0);
+	if (!line)
+		return ;
 	lines = ft_strdup("");
 	deli = ft_strjoin(del, "\n");
 	while (ft_strcmp(line, deli))
@@ -31,6 +33,8 @@ void	ft_heredoc(char *del, int fd)
 		free(line);
 		ft_fprintf(1, "heredoc> ");
 		line = get_next_line(0);
+		if (!line)
+			break;
 	}
 	ft_fprintf(fd, "%s", lines);
 	free(lines);

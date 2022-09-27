@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:10:58 by zlafou            #+#    #+#             */
-/*   Updated: 2022/09/27 08:00:54 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/09/27 16:52:00 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,22 @@ static	void	ft_endfiles(t_pipex data)
 		fd = open(data.file1, O_RDONLY);
 	dup2(fd, 0);
 	close(fd);
-	fd = open(data.file2, O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	if (data.deli)
+		fd = open(data.file2, O_CREAT | O_WRONLY | O_APPEND, 0644);
+	else
+		fd = open(data.file2, O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	dup2(fd, 1);
 	close(fd);
 }
 
 static	void	ft_child(t_pipex data, int i, int *std, char **ep)
 {
+	if (i == 0 && access(data.file1, F_OK | R_OK) && !data.deli)
+		ft_checkfiles(data.file1);
 	ft_filter(data, i);
 	if (i != data.ncmd - 1)
 		dup2(std[1], 1);
+	close(std[0]);
 	close(std[1]);
 	execve(data.alloc.cmdpaths[i], data.alloc.spcmd[i], ep);
 }
@@ -82,11 +88,12 @@ void	ft_execute(t_pipex data, char **ep)
 		ft_cleanup(pid != -1, "fork", data);
 		if (pid == 0)
 			ft_child(data, i, std, ep);
-		dup2(std[0], 0);
+		if (i != data.ncmd - 1)
+			dup2(std[0], 0);
 		close(std[0]);
 		close(std[1]);
 	}
-	// waitpid(-1, NULL, 0);
+	close(0);
 	while (wait(NULL) != -1)
 		;
 }

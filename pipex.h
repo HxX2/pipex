@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:41:38 by zlafou            #+#    #+#             */
-/*   Updated: 2022/09/27 07:36:08 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/09/27 10:48:08 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_pipex
 
 void	ft_cleanup(long condition, char	*ermsg, t_pipex	data);
 char	*ft_joinpath(char const *s1, char const *s2);
-int		ft_checkfiles(char	*file1, int i);
+void	ft_checkfiles(char	*file1);
 void	ft_setpaths(char **ep, t_pipex *data);
 void	ft_checkpaths(t_pipex *data, int i);
 void	ft_setcmdpaths(t_pipex	*data);
