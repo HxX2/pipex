@@ -10,6 +10,8 @@ void	printdata(t_pipex data)
 	write(1, "\n", 1);
 	printf("data.file1 = %s\n", data.file1);
 	write(1, "\n", 1);
+	printf("data.deli = %s\n", data.deli);
+	write(1, "\n", 1);
 	printf("data.file2 = %s\n", data.file2);
 	write(1, "\n", 1);
 	for (int x = 0; data.alloc.spcmd[x]; x++)

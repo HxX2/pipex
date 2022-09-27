@@ -1,4 +1,4 @@
-SRC = pipex.c src/exe.c src/forbidden.c src/ft_split.c src/pipex_utils.c src/str_utils.c src/str_utils2.c src/fprintf/libftprintf.a
+SRC = pipex.c src/exe.c src/forbidden.c src/ft_split.c src/pipex_utils.c src/str_utils.c src/str_utils2.c src/fprintf/libftprintf.a src/heredoc.c src/gnl/get_next_line.c
 CC = gcc
 NAME = pipex
 FLAGS = -Wextra -Werror -Wall

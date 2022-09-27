@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:37:24 by zlafou            #+#    #+#             */
-/*   Updated: 2022/06/22 23:41:03 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/09/27 07:32:43 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,23 @@ int	main(int ac, char **av, char **ep)
 		ft_fprintf(1, "not enough arguments\n");
 		exit(1);
 	}
-	if (!ft_strcmp(av[1], "here_doc"))
-	{
-		av++;
-		ac--;
-	}
 	data.file1 = av[1];
 	data.file2 = av[ac - 1];
-	ft_checkfiles(data.file1);
-	data.cmd = &av[2];
-	data.cmd[ac - 3] = NULL;
+	if (!ft_strcmp(av[1], "here_doc"))
+	{
+		data.deli = av[2];
+		data.cmd = &av[3];
+		data.cmd[ac - 4] = NULL;
+	}
+	else
+	{
+		data.cmd = &av[2];
+		data.cmd[ac - 3] = NULL;
+	}
 	ft_setpaths(ep, &data);
 	ft_setspcmd(&data);
 	ft_setcmdpaths(&data);
+	// printdata(data);
 	ft_execute(data, ep);
 	return (0);
 }

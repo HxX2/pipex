@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 10:54:11 by zlafou            #+#    #+#             */
-/*   Updated: 2022/06/06 10:54:15 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/09/27 07:43:42 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-void	ft_checkfiles(char	*file1)
+int	ft_checkfiles(char *file1, int i)
 {
 	if (access(file1, F_OK | R_OK))
 		perror(file1);
+	return (++i);
 }
 
 void	ft_setpaths(char **ep, t_pipex *data)

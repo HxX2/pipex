@@ -4,17 +4,20 @@
 
 # files without ext
 *
+!/**/
 !*.*
 
 # vscode
 .vscode
 README.md
 ppxtst/
+.DS_Store
 
 # make
 pipex
 *.o
 libft.a
+libftprintf.a
 
 # c++ debuger
 *.dSYM
