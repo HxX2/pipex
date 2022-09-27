@@ -1,9 +1,12 @@
-SRC = pipex.c src/exe.c src/forbidden.c src/ft_split.c src/pipex_utils.c src/str_utils.c src/str_utils2.c src/fprintf/libftprintf.a src/heredoc.c src/gnl/get_next_line.c
+SRC = pipex.c src/exe.c src/forbidden.c src/ft_split.c src/pipex_utils.c src/str_utils.c src/str_utils2.c src/fprintf/libftprintf.a 
+BSRC = pipex_bonus.c src/exe_bonus.c src/forbidden.c src/ft_split.c src/pipex_utils.c src/str_utils.c src/str_utils2.c src/fprintf/libftprintf.a src/heredoc_bonus.c src/gnl/get_next_line.c
 CC = gcc
 NAME = pipex
+BNAME = pipex_bonus
 FLAGS = -Wextra -Werror -Wall
 HEADER = "\033[0;35m   █▀▀█ ░▀░ █▀▀█ █▀▀ █░█ \n   █░░█ ▀█▀ █░░█ █▀▀ ▄▀▄ \n   █▀▀▀ ▀▀▀ █▀▀▀ ▀▀▀ ▀░▀\033[0;0m"
 FOOTER = "\033[0;35m➔\033[0;0m type \033[0;34m./pipex\033[0;0m to run the programme."
+BFOOTER = "\033[0;35m➔\033[0;0m type \033[0;34m./pipex_bonus\033[0;0m to run the programme."
 
 all: $(NAME) | footer
 
@@ -14,6 +17,9 @@ header :
 
 footer :
 	@echo $(FOOTER)
+
+bfooter :
+	@echo $(BFOOTER)
 
 $(NAME): | header
 	@echo "\033[0;35m\033[1m────── making fprintf ──────\033[0;0m"
@@ -35,6 +41,7 @@ fclean: clean | header
 	@echo "\033[0;35m\033[1m────── fclean pipex ──────\033[0;0m"
 	@printf "\033[2m"
 	rm -rf $(NAME)
+	rm -rf $(BNAME)
 	@echo "\033[0;0m"
 	@echo "\033[0;35m\033[1m────── fclean fprintf ──────\033[0;0m"
 	@printf "\033[2m"
@@ -43,14 +50,16 @@ fclean: clean | header
 
 re: fclean all
 
-bonus: | header
+bonus: $(BNAME) | bfooter
+
+$(BNAME): | header
 	@echo "\033[0;35m\033[1m────── making fprintf ──────\033[0;0m"
 	@printf "\033[2m"
 	@$(MAKE) -C src/fprintf/
 	@echo "\033[0;0m"
 	@echo "\033[0;35m\033[1m────── making pipex ──────\033[0;0m"
 	@printf "\033[2m"
-	$(CC) $(FLAGS) -o $(NAME) $(SRC)
+	$(CC) $(FLAGS) -o $(BNAME) $(BSRC)
 	@echo
 
 
