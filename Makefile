@@ -1,5 +1,5 @@
-SRC = pipex.c src/exe.c src/forbidden.c src/ft_split.c src/pipex_utils.c src/str_utils.c src/str_utils2.c src/fprintf/libftprintf.a 
-BSRC = pipex_bonus.c src/exe_bonus.c src/forbidden.c src/ft_split.c src/pipex_utils.c src/str_utils.c src/str_utils2.c src/fprintf/libftprintf.a src/heredoc_bonus.c src/gnl/get_next_line.c
+SRC = pipex.c src/exe.c src/ft_split.c src/pipex_utils.c src/str_utils.c src/str_utils2.c src/fprintf/libftprintf.a 
+BSRC = pipex_bonus.c src/exe_bonus.c src/ft_split.c src/pipex_utils.c src/str_utils.c src/str_utils2.c src/fprintf/libftprintf.a src/heredoc_bonus.c src/gnl/get_next_line.c
 CC = gcc
 NAME = pipex
 BNAME = pipex_bonus

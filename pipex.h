@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:41:38 by zlafou            #+#    #+#             */
-/*   Updated: 2022/09/27 10:48:08 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/09/28 07:40:14 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_checkpaths(t_pipex *data, int i);
 void	ft_setcmdpaths(t_pipex	*data);
 void	ft_rwipe(void *ptr, int plvl);
 void	ft_setspcmd(t_pipex *data);
-void	ft_heredoc(char *del, int fd);
+void	ft_heredoc(char *deli, int fd);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	**ft_split(char const *s, char c);

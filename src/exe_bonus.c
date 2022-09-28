@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:10:58 by zlafou            #+#    #+#             */
-/*   Updated: 2022/09/27 18:11:48 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/09/28 07:36:09 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static	void	ft_endfiles(t_pipex data)
 	if (data.deli)
 	{
 		pipe(doc);
-		ft_heredoc(data.deli, doc[1]);
+		ft_heredoc(ft_strjoin(data.deli, "\n"), doc[1]);
 		fd = dup(doc[0]);
 		close(doc[1]);
 	}

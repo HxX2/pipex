@@ -6,7 +6,7 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:37:24 by zlafou            #+#    #+#             */
-/*   Updated: 2022/09/27 19:54:31 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/09/28 07:37:45 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ void	ft_setcmdpaths(t_pipex *data)
 			data->alloc.cmdpaths[i] = ft_strdup(data->alloc.spcmd[i][0]);
 		else
 			ft_checkpaths(data, i);
+		if (!data->alloc.cmdpaths[i])
+		{
+			data->alloc.cmdpaths[i] = ft_strdup("");
+			ft_cleanup(!!data->alloc.cmdpaths[i], "malloc", *data);
+		}
 	}
 }
 
@@ -72,12 +77,8 @@ void	ft_checkpaths(t_pipex *data, int i)
 		ft_cleanup(!!cmpath, "malloc", *data);
 		if (!access(cmpath, F_OK))
 			data->alloc.cmdpaths[i] = cmpath;
-		else if (!data->alloc.cmdpaths[i])
-		{
+		else
 			free(cmpath);
-			data->alloc.cmdpaths[i] = ft_strdup("");
-			ft_cleanup(!!data->alloc.cmdpaths[i], "malloc", *data);
-		}
 	}
 }
 

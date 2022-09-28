@@ -6,17 +6,16 @@
 /*   By: zlafou <zlafou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 08:28:49 by zlafou            #+#    #+#             */
-/*   Updated: 2022/09/27 20:01:55 by zlafou           ###   ########.fr       */
+/*   Updated: 2022/09/28 07:41:17 by zlafou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-void	ft_heredoc(char *del, int fd)
+void	ft_heredoc(char *deli, int fd)
 {
 	char	*line;
 	char	*lines;
-	char	*deli;
 	char	*tmp;
 
 	ft_fprintf(1, "heredoc> ");
@@ -24,7 +23,6 @@ void	ft_heredoc(char *del, int fd)
 	if (!line)
 		return ;
 	lines = ft_strdup("");
-	deli = ft_strjoin(del, "\n");
 	while (ft_strcmp(line, deli))
 	{
 		tmp = ft_strjoin(lines, line);
@@ -37,6 +35,7 @@ void	ft_heredoc(char *del, int fd)
 			break ;
 	}
 	ft_fprintf(fd, "%s", lines);
+	free(line);
 	free(lines);
 	free(deli);
 }
